@@ -67,6 +67,4 @@ export default class App extends Component {
 
 ## Thanks
 
-This package was build upon [react-svg-icon-generator-ts](https://github.com/peeter-tomberg/react-svg-icon-generator)
-
-This package was build upon [react-svg-icon-generator](https://github.com/blueberryapps/react-svg-icon-generator)
+This package was build upon [react-svg-icon-generator-ts](https://github.com/peeter-tomberg/react-svg-icon-generator) & [react-svg-icon-generator](https://github.com/blueberryapps/react-svg-icon-generator)
