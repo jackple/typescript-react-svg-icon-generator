@@ -1,0 +1,21 @@
+{
+  "extends": "airbnb/base",
+  "rules" : {
+    "indent": ["error", 4],
+    "max-len" : ["error", 200],
+    "comma-dangle": ["error", "never"],
+    "space-before-function-paren" : ["error", "always"],
+    "arrow-body-style" : ["off"],
+    "func-names" : ["off"],
+    "new-cap" : ["error", {"capIsNewExceptions": ["Component"]}],
+    "brace-style" : ["error", "stroustrup"],
+    "no-console" : ["warn", { "allow": ["warn", "error", "info", "debug", "groupCollapsed", "groupEnd"] }],
+    "no-param-reassign" : ["off"],
+    "class-methods-use-this": ["off"],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.spec.js"]}],
+    "no-unused-vars": ["error", { "args": "after-used", "argsIgnorePattern": "bootstrap" }]
+  },
+  "globals": {
+    "FileReader": false
+  }
+}

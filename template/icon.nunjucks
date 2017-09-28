@@ -1,0 +1,69 @@
+// {{comment}}
+{% if tslintDisable %}
+/* tslint:disable */
+{% endif %}
+import * as React from 'react'
+
+const iconList = [
+    {%- for icon in icons %}
+    '{{icon.name}}',
+    {%- endfor %}
+]
+
+interface IconProps {
+    color?: string
+    className?: string
+    height?: number
+    kind?: string
+    onClick?: () => void
+    preview?: boolean
+    size?: number
+    style?: any
+    width?: number
+    wrapperStyle?: any
+}
+export default class Icon extends React.Component<IconProps, {}> {
+
+    static defaultProps = {
+        className: '',
+        color: '#000',
+        size: 32
+    }
+
+    render() {
+        const { kind, preview } = this.props
+        return preview ? this.renderPreview() : this.renderIcon(kind)
+    }
+
+    renderPreview() {
+        return (<div>{ iconList.map(kind => this.renderPreviewKind(kind)) }</div>)
+    }
+
+    renderIcon(kind) {
+        const { wrapperStyle } = this.props
+        if (wrapperStyle) {
+            return (<div style={wrapperStyle}>{ this.getIcon(kind) }</div>)
+        }
+        return this.getIcon(kind)
+    }
+
+    renderPreviewKind(kind) {
+        return (
+            <div key={kind}>
+                <h3>&lt;Icon kind="{kind}" /&gt;</h3>
+                { this.renderIcon(kind) }
+            </div>
+        )
+    }
+
+    getIcon(kind) {
+        const { color, height, onClick, size, style, width, className } = this.props
+
+        switch (kind) {
+            {% for icon in icons -%}
+            case ('{{icon.name}}'): return ({{icon.svg | safe}})
+            {% endfor -%}
+            default: return null
+        }
+    }
+}
