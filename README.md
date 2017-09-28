@@ -34,7 +34,6 @@ generator(config)
 - **comment** (optional) - it will be added to generated component, so other developer will know what to do
 - **template** (optional) - provide path to your custom template
 - **tslintDisable** (optional) - add `/* tslint:disable */` after comment
-run it by `gulp icon`
 
 ## Use generate Icon component
 
