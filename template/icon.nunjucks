@@ -10,7 +10,7 @@ const iconList = [
     {%- endfor %}
 ]
 
-interface IconProps {
+export interface IconProps {
     color?: string
     className?: string
     height?: number
