@@ -12,5 +12,5 @@ module.exports.cleanupSvg = (svg) => {
     .replace(/\s{2,}/g, ' ')
     .replace(/ class="\w+"/g, '')
     .replace(/<style>.*<\/style>/g, match => match.replace(/<style>/g, '<style>{ `').replace(/<\/style>/g, '` }</style>'))
-    .replace(/viewBox/, 'fill={color} height={height || size} width={width || size} onClick={onClick} style={style} className={className} viewBox');
+    .replace(/viewBox/, "fill={color || 'currentColor'} height={height || size} width={width || size} onClick={onClick} style={style} className={className} viewBox");
 };
