@@ -1,6 +1,6 @@
 {
   "name": "typescript-react-svg-icon-generator",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "typescript-react-svg-icon-generator",
   "main": "src/index.js",
   "scripts": {
