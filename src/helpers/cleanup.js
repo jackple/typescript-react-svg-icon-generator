@@ -4,8 +4,8 @@ module.exports.cleanupName = (name) => {
 
 module.exports.cleanupSvg = (svg) => {
     return svg
-    .replace(/ width="\d+"/, '')
-    .replace(/ height="\d+"/, '')
+    .replace(/ width="[^"]*"/, '')
+    .replace(/ height="[^"]*"/, '')
     .replace(/ fill="#?\w+"/g, '')
     .replace(/ fill-rule="#?\w+"/g, '')
     .replace(/ clip-rule="#?\w+"/g, '')
