@@ -9,7 +9,7 @@ const getSvgsInDir = (dir) => {
         .map((file) => {
             const absolutePath = path.join(dir, file);
             if (fs.lstatSync(absolutePath).isDirectory()) {
-                return getSvgsInDir(dir, file);
+                return getSvgsInDir(absolutePath);
             }
             if (!absolutePath.match(/\.svg$/)) {
                 return null;
