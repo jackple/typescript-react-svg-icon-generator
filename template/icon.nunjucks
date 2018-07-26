@@ -14,7 +14,7 @@ export interface IconProps {
     color?: string
     className?: string
     height?: number
-    kind?: string
+    kind?: string | any
     onClick?: () => void
     preview?: boolean
     size?: number
