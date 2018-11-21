@@ -8,7 +8,7 @@ const iconList = [
     {%- for icon in icons %}
     '{{icon.name}}',
     {%- endfor %}
-]
+];
 
 export interface IconProps {
     color?: string
@@ -28,23 +28,23 @@ export default class Icon extends React.Component<IconProps, {}> {
         className: '',
         color: 'currentColor',
         size: 32
-    }
+    };
 
     render() {
-        const { kind, preview } = this.props
-        return preview ? this.renderPreview() : this.renderIcon(kind)
+        const { kind, preview } = this.props;
+        return preview ? this.renderPreview() : this.renderIcon(kind);
     }
 
     renderPreview() {
-        return (<div>{ iconList.map(kind => this.renderPreviewKind(kind)) }</div>)
+        return (<div>{ iconList.map(kind => this.renderPreviewKind(kind)) }</div>);
     }
 
     renderIcon(kind: string) {
-        const { wrapperStyle } = this.props
+        const { wrapperStyle } = this.props;
         if (wrapperStyle) {
-            return (<div style={wrapperStyle}>{ this.getIcon(kind) }</div>)
+            return (<div style={wrapperStyle}>{ this.getIcon(kind) }</div>);
         }
-        return this.getIcon(kind)
+        return this.getIcon(kind);
     }
 
     renderPreviewKind(kind: string) {
@@ -53,17 +53,17 @@ export default class Icon extends React.Component<IconProps, {}> {
                 <h3>&lt;Icon kind="{kind}" /&gt;</h3>
                 { this.renderIcon(kind) }
             </div>
-        )
+        );
     }
 
     getIcon(kind: string) {
-        const { color, height, onClick, size, style, width, className } = this.props
+        const { color, height, onClick, size, style, width, className } = this.props;
 
         switch (kind) {
             {% for icon in icons -%}
-            case ('{{icon.name}}'): return ({{icon.svg | safe}})
+            case ('{{icon.name}}'): return ({{icon.svg | safe}});
             {% endfor -%}
-            default: return null
+            default: return null;
         }
     }
 }
