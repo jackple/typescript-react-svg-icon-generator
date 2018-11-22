@@ -22,7 +22,7 @@ export interface IconProps {
     width?: number
     wrapperStyle?: any
 }
-export default class Icon extends React.Component<IconProps, {}> {
+export default class Icon extends React.PureComponent<IconProps, {}> {
 
     static defaultProps = {
         className: '',
