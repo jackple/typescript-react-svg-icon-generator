@@ -10,6 +10,12 @@ const iconList = [
     {%- endfor %}
 ];
 
+export const SVGNames = {
+    {%- for icon in icons %}
+        {{icon.name | replace("-", "_") | upper}}: '{{icon.name}}',
+    {%- endfor %}
+};
+
 export interface IconProps {
     color?: string
     className?: string
